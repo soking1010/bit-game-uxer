@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>峰月設計 - 文字冒險遊戲</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>峰月設計</h1>
+            <div class="subtitle">一場關於設計與生存的冒險</div>
+        </div>
+        
+        <div class="story-container">
+            <div class="story-text" id="story-text">
+                <p>陳思涵瞪著電腦螢幕上的表格，第三次確認那個財務數字是否真的如此慘澹。</p>
+                <p>紅色的數字仍然坐在那裡，像個不速之客，徹底破壞了她的星期一早晨。</p>
+                <p>「不會好轉的，相信我。」她自言自語，按下更新鍵，希望那只是個噩夢。</p>
+                <p>沒有任何改變。</p>
+                <p>峰月設計的銀行帳戶觸底已經整整三個月了。</p>
+                <p>她抬頭看了眼辦公室的時鐘——9:15。</p>
+                <p>老闆江旭峰通常十點才會出現，還有四十五分鐘可以想出一個不那麼絕望的方案。</p>
+                <p>電話突然響起，打斷了她的思緒。</p>
+                <p class="typing">_</p>
+            </div>
+        </div>
+        
+        <div class="choices-container" id="choices-container">
+            <button class="choice-btn" data-choice="answer-phone">接起電話</button>
+            <button class="choice-btn" data-choice="ignore-phone">忽略電話，繼續思考財務問題</button>
+            <button class="choice-btn" data-choice="check-accounts">再次檢查帳目，尋找可能的錯誤</button>
+        </div>
+        
+        <div class="character-stats">
+            <div class="character-info">
+                <div class="character-name">陳思涵</div>
+                <div class="character-title">財務經理</div>
+                <div class="character-personality">務實、謹慎、忠誠</div>
+            </div>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-label">疲憊值:</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" id="fatigue-bar" style="width: 35%;"></div>
+                    </div>
+                    <div class="stat-value" id="fatigue-value">35/100</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-label">動機值:</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill motivation-fill" id="motivation-bar" style="width: 60%;"></div>
+                    </div>
+                    <div class="stat-value" id="motivation-value">60/100</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-label">公司資金:</div>
+                    <div class="stat-value" id="company-funds">$12,450</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

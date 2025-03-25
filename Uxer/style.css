@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
+
+:root {
+    --main-bg: #0a0a0a;
+    --text-color: #33ff33;
+    --highlight: #66ff66;
+    --box-border: #33ff33;
+    --button-bg: #1a1a1a;
+    --button-hover: #2a2a2a;
+    --fatigue-color: #ff3333;
+    --motivation-color: #3399ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+body {
+    background-color: var(--main-bg);
+    color: var(--text-color);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow: hidden;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.game-header {
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--box-border);
+    margin-bottom: 15px;
+}
+
+.game-header h1 {
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.story-container {
+    border: 1px solid var(--box-border);
+    flex-grow: 1;
+    margin-bottom: 15px;
+    overflow: hidden;
+    position: relative;
+    background: rgba(10, 10, 10, 0.8);
+}
+
+.story-text {
+    padding: 15px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.story-text p {
+    margin-bottom: 12px;
+}
+
+.typing {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.choices-container {
+    border: 1px solid var(--box-border);
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.choice-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    border: 1px solid var(--box-border);
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+.choice-btn:last-child {
+    margin-bottom: 0;
+}
+
+.choice-btn:hover, .choice-btn:active {
+    background-color: var(--button-hover);
+    color: var(--highlight);
+}
+
+.choice-btn::before {
+    content: "> ";
+}
+
+.character-stats {
+    border: 1px solid var(--box-border);
+    padding: 12px;
+}
+
+.character-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.character-name {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.character-title {
+    color: var(--highlight);
+    margin-right: 10px;
+}
+
+.character-personality {
+    font-style: italic;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.stat-label {
+    width: 80px;
+    font-size: 14px;
+}
+
+.stat-bar {
+    flex-grow: 1;
+    height: 10px;
+    background-color: var(--button-bg);
+    margin: 0 10px;
+    position: relative;
+}
+
+.stat-fill {
+    height: 100%;
+    background-color: var(--fatigue-color);
+    transition: width 0.5s ease;
+}
+
+.motivation-fill {
+    background-color: var(--motivation-color);
+}
+
+.stat-value {
+    width: 70px;
+    font-size: 14px;
+    text-align: right;
+}
+
+/* 手機適配 */
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+        font-size: 15px;
+    }
+    
+    .game-header h1 {
+        font-size: 22px;
+    }
+    
+    .choice-btn {
+        padding: 8px 10px;
+        font-size: 15px;
+    }
+    
+    .story-text {
+        padding: 12px;
+    }
+    
+    .character-info {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .stat-label {
+        width: 70px;
+    }
+    
+    .stat-value {
+        width: 60px;
+    }
+}
